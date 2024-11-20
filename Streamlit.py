@@ -10,7 +10,7 @@ st.set_page_config(page_title="Analyse Beans DataSet", layout="wide")
 
 # Menu barre latérale
 st.sidebar.title('Projet 2 ')
-menu = st.sidebar.selectbox("Navigation", ["Accueil", "Visualisation", "Rapport"])
+menu = st.sidebar.selectbox("Navigation", ["Accueil", "Visualisation", "Rapport", "Github"])
 
 if menu == "Accueil":
     st.markdown(
@@ -140,7 +140,7 @@ elif menu == "Visualisation":
         except Exception as e:
             st.error(f"Erreur dans le pairplot (Arabica et Espresso) : {e}")
 
-else:
+elif menu == "Rapport":
     st.markdown(
         """
         <div style='text-align:center;'>
@@ -234,3 +234,10 @@ else:
         </div>
         """, unsafe_allow_html=True
     )
+
+else:
+    st.title("Lien vers le dépôt GitHub de l'application")
+    
+    st.write("Voici le lien vers le dépôt GitHub contenant le code de l'application :")
+    
+    st.markdown("[Lien vers le dépôt GitHub](https://github.com/LehbibA/Streamlit.git)")
